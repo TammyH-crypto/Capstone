@@ -2,6 +2,7 @@ import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Inventory from "./Inventory";
 import NavBar from "./components/NavBar";
+import "./App.scss";
 
 function App() {
   return (
