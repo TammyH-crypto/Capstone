@@ -3,7 +3,7 @@ import "@testing-library/jest-dom";
 import App from "./App";
 import { MemoryRouter } from "react-router-dom";
 
-test("Welcome to my book swap", () => {
+test("Welcome to the BookStore", () => {
   render(
     <MemoryRouter>
       <App />

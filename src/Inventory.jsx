@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import { addBook, scanBooks } from "./dynamo.js";
 import "./App.scss";
 
+
 export default function Inventory() {
   const [form, setForm] = useState({
     title: "",
     author: "",
     onhand: "",
     name: "",
+    src: "",
   });
   const [book, setBook] = useState([]);
 
@@ -30,7 +32,7 @@ export default function Inventory() {
   async function handleAdd(e) {
     e.preventDefault();
 
-    if (!form.title || !form.author || !form.onhand) return;
+    if (!form.title || !form.author || !form.onhand ) return;
 
     const item = {
       id: crypto.randomUUID(),
@@ -48,9 +50,8 @@ export default function Inventory() {
       <h1>Inventory Management</h1>
       <div>
         <form onSubmit={handleAdd}>
-          <label>Title:</label>
+          <label className="title">Title:</label>
           <input
-            className="form-control"
             id="title"
             name="title"
             type="text"
@@ -59,9 +60,8 @@ export default function Inventory() {
             required
           />
 
-          <label>Author:</label>
+          <label className="author">Author:</label>
           <input
-            className="form-control"
             id="author"
             name="author"
             type="text"
@@ -70,9 +70,8 @@ export default function Inventory() {
             required
           />
 
-          <label>onhand:</label>
+          <label className="onhand">onhand:</label>
           <input
-            className="form-control"
             id="onhand"
             name="onhand"
             type="number"
