@@ -1,5 +1,9 @@
 import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
-import { DynamoDBDocumentClient, ScanCommand, PutCommand } from "@aws-sdk/lib-dynamodb";
+import {
+  DynamoDBDocumentClient,
+  ScanCommand,
+  PutCommand,
+} from "@aws-sdk/lib-dynamodb";
 
 const TABLE = "library";
 
@@ -14,7 +18,7 @@ const client = new DynamoDBClient({
 const docClient = DynamoDBDocumentClient.from(client);
 
 export async function scanBooks() {
-  const params = await docClient.send(
+  const { Items } = await docClient.send(
     new ScanCommand({
       TableName: TABLE,
     })

@@ -10,9 +10,10 @@ export default function Inventory() {
     name: "",
   });
   const [book, setBook] = useState([]);
-  const [show, setShow] = useState(false);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    scanBooks().then(setBook);
+  }, []);
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -23,21 +24,22 @@ export default function Inventory() {
       };
     });
   }
-  async function handleAdd() {
+  async function handleAdd(e) {
     e.preventDefault();
+
     if (!form.title || !form.author || !form.onhand) return;
+
     const item = {
       id: crypto.randomUUID(),
-      name: form.name,
+
       title: form.title,
       author: form.author,
       onhand: form.onhand,
     };
     await addBook(item);
     setBook((prevBooks) => [...prevBooks, item]);
-    setShow(false);
   }
-
+  console.log(book);
   return (
     <>
       <h1>Inventory Management</h1>
@@ -74,6 +76,16 @@ export default function Inventory() {
           <button type="submit">Add Book</button>
         </form>
       </div>
+
+      <ul>
+        {book.map((item) => (
+          <li key={item.id}>
+            <h3>{item.title}</h3>
+            <p>Author: {item.author}</p>
+            <p>On Hand: {item.onhand}</p>
+          </li>
+        ))}
+      </ul>
     </>
   );
 }

@@ -9,6 +9,7 @@ function App() {
       <NavBar />
       <Routes>
         <Route path="/inventory" element={<Inventory />} />
+        <Route path="/" element={<h1>Welcome to the BookStore</h1>} />
       </Routes>
     </>
   );
