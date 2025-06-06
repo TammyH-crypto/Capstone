@@ -47,10 +47,11 @@ export default function Inventory() {
     <>
       <h1>Inventory Management</h1>
       <div>
-        <h2>Add a New Book</h2>
         <form onSubmit={handleAdd}>
           <label>Title:</label>
           <input
+            className="form-control"
+            id="title"
             name="title"
             type="text"
             value={form.title}
@@ -60,6 +61,8 @@ export default function Inventory() {
 
           <label>Author:</label>
           <input
+            className="form-control"
+            id="author"
             name="author"
             type="text"
             value={form.author}
@@ -69,20 +72,22 @@ export default function Inventory() {
 
           <label>onhand:</label>
           <input
+            className="form-control"
+            id="onhand"
             name="onhand"
             type="number"
             value={form.onhand}
             onChange={handleChange}
             required
           />
-
+          <h3>Add a New Book</h3>
           <button type="submit">Add Book</button>
         </form>
       </div>
 
       <ul>
         {book.map((item) => (
-          <li key={item.id}>
+          <li key={item.id} className="book-item">
             <h3>{item.title}</h3>
             <p>Author: {item.author}</p>
             <p>On Hand: {item.onhand}</p>

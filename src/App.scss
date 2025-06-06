@@ -2,22 +2,24 @@
     box-sizing: border-box;
     box-shadow: inset;
     margin: 0;
-    padding: 0;
+    padding: 0.5rem;
 }
 
 
 
 .navbar {
     & a:visited {
-        color: #010103;
-        font-size: larger;
+        color: #050508;
+       
     }
     a{
-        margin: 0 1rem;
+        margin: 0 2rem;
         color: #745316;
         text-decoration: underline;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 1.2rem;
     }
-    padding: 1rem;
+    padding: 2rem;
     text-align: center;
 }
 
@@ -30,19 +32,23 @@ body {
 }
 
  h1 {
-text-decoration: underline;
+    text-decoration: underline;
     color: #0e160d;
     font-size: 2rem;
-    margin: 1rem 0;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif     ;
+    padding: 0.5rem ;
+    padding-bottom: 3rem;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+
 
  }
 
  h2 {
     color: #170994;
     font-size: 1.5rem;
-    margin: 1rem 0;
+    margin: 2rem 0;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding: 2.5rem;
+    padding-bottom: 2rem;
  }
 
  button {
@@ -50,18 +56,49 @@ text-decoration: underline;
     box-shadow: inset;
     border: double;
     border-color: #a2a1a7;
+    padding:0.1rem;
 
  }  
 
 button:hover {
     background-color: #bb16a5;
     color: #03020e;
-    cursor: pointer;   
+    cursor: pointer;  
+
 } 
-label {
-    color: #03020e;
-    font-size: 1.2rem;
-    margin-right: 1.5rem;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
- }
+#title {
+    color: #2f49da;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-right: 5rem;
+    margin-left: 0.5rem;
+    margin-right: 1rem;
+}
  
+#author {
+    color: #2f49da;
+    font-size: 1rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-right: 5rem;
+    margin-left: 0.5rem;
+    margin-right: 1rem;
+}
+#onhand {
+    color: #2f49da;
+    font-size: 1rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding-right: 5rem;
+    margin-left: 0.5rem;
+    margin-right: 1rem;
+}
+.book-item {
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #081352;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #a2a1a7;
+    background-color: #d8d8d8;
+    box-shadow: inset;
+}
