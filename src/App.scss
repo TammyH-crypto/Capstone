@@ -1,4 +1,9 @@
-
+* {
+    box-sizing: border-box;
+    box-shadow: inset;
+    margin: 0;
+    padding: 0;
+}
 .navbar {
     & a:visited {
         color: #ffa500;
