@@ -11,6 +11,9 @@ export default function Inventory() {
   });
   const [book, setBook] = useState([]);
 
+  const handleDelete = (id) => {
+    setBook((prevBooks) => prevBooks.filter((item) => item.id !== id));
+  };
   useEffect(() => {
     scanBooks().then(setBook);
   }, []);
@@ -39,7 +42,7 @@ export default function Inventory() {
     await addBook(item);
     setBook((prevBooks) => [...prevBooks, item]);
   }
-  console.log(book);
+
   return (
     <>
       <h1>Inventory Management</h1>
@@ -83,6 +86,7 @@ export default function Inventory() {
             <h3>{item.title}</h3>
             <p>Author: {item.author}</p>
             <p>On Hand: {item.onhand}</p>
+            <button onClick={() => handleDelete(item.id)}>Delete</button>
           </li>
         ))}
       </ul>
